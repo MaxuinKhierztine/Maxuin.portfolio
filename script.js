@@ -88,8 +88,8 @@ const typingText = document.getElementById("typing-text");
 
 if (typingText) {
   const phrases = [
-    "Learning the logic.",
-    "Exploring the unknown."
+    "Learning Today.",
+    "Building Tomorrow."
   ];
 
   let phraseIndex = 0;

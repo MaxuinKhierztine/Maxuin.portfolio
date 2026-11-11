@@ -666,189 +666,209 @@ footer.page-controls {
 }
 
 
-/* =================================
-   ABOUT ME — TWO COLUMN LAYOUT
-================================= */
+/* =========================================
+   PAGE 2 — ABOUT ME
+========================================= */
 
 #about .content-wrap {
     width: 100%;
-    max-width: 1450px;
-    margin: 0 auto;
-}
-
-/* MAIN LAYOUT */
-#about .about-layout {
-    display: grid;
-    grid-template-columns: 1fr 2px 1.3fr;
-    gap: 30px;
-
-    width: 100%;
-    height: calc(100svh - 120px);
-    min-height: 0;
-
-    margin-top: -30px;
-    align-items: stretch;
-}
-
-
-/* =================================
-   ABOUT ME — COMPACT ONE-PAGE LAYOUT
-================================= */
-
-#about .content-wrap {
-    width: 100%;
-    max-width: 1350px;
-    margin: 0 auto;
+    max-width: 1150px;
+    margin: 5 auto;
+    padding: 15px 15px;
     box-sizing: border-box;
-    padding: 0 15px;
 }
 
 /* MAIN LAYOUT */
 #about .about-layout {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 2px minmax(0, 1.1fr);
-    gap: 18px;
+    grid-template-columns: minmax(0, 1fr) 2px minmax(0, 1fr);
+    gap: 22px;
 
     width: 100%;
-    height: calc(100svh - 150px);
-    max-height: 650px;
-    min-height: 0;
+    max-width: 1100px;
+    margin: 0 auto;
 
-    margin-top: -15px;
-    align-items: stretch;
+    align-items: center;
 }
 
-/* =================================
-   LEFT SIDE — SKILLS AND HOBBIES
-================================= */
+/* =========================================
+   LEFT COLUMN
+========================================= */
 
 #about .about-left {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
+    width: 100%;
     min-width: 0;
-    min-height: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
 }
 
-/* CARDS */
-#about .about-card {
+/* ABOUT ME BOX */
+#about .about-intro {
+    width: 100%;
     box-sizing: border-box;
-    min-width: 0;
-    min-height: 0;
 
-    padding: 18px 14px;
+    padding: 18px 20px;
 
-    border: 1px solid rgba(192, 132, 252, 0.3);
-    border-radius: 15px;
+    border: 1px solid rgba(192, 132, 252, 0.4);
+    border-radius: 14px;
 
-    background: rgba(17, 19, 38, 0.72);
+    background: rgba(17, 19, 38, 0.85);
     backdrop-filter: blur(15px);
+}
 
-    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.08);
+#about .about-intro h2 {
+    color: #b76aff;
+    font-size: 1rem;
+    text-align: center;
+    margin: 0 0 10px;
+}
+
+#about .about-intro p {
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    text-align: center;
+    margin: 0;
+}
+
+/* =========================================
+   SKILLS AND HOBBIES
+========================================= */
+
+#about .about-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 50px;
+
+    width: 100%;
+}
+
+#about .about-card {
+    width: 100%;
+    min-width: 0;
+    min-height: 180px;
+    box-sizing: border-box;
+
+    padding: 18px 13px;
+
+    border: 1px solid rgba(192, 132, 252, 0.35);
+    border-radius: 14px;
+
+    background: rgba(17, 19, 38, 0.85);
+    backdrop-filter: blur(15px);
 
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-/* CARD HEADINGS */
 #about .about-card h3 {
     color: #b76aff;
-    font-size: 1.05rem;
+    font-size: 1rem;
     text-align: center;
-    margin-bottom: 12px;
+    margin: 0 0 12px;
 }
 
-/* CARD LISTS */
 #about .about-card ul {
-    padding-left: 17px;
     margin: 0;
+    padding-left: 17px;
 }
 
 #about .about-card li {
     color: var(--muted);
-    font-size: 0.88rem;
-    line-height: 1.6;
-    margin-bottom: 5px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 7px;
 }
 
-/* =================================
-   MIDDLE — VERTICAL DIVIDER
-================================= */
+/* =========================================
+   MIDDLE DIVIDER
+========================================= */
 
 #about .about-divider {
-    width: 2px;
+    width: 5px;
     height: 100%;
+    min-height: 400px;
 
-    background: rgba(183, 106, 255, 0.65);
+    background: rgba(183, 106, 255, 0.7);
     border-radius: 10px;
 
     box-shadow: 0 0 10px rgba(183, 106, 255, 0.3);
 }
 
-/* =================================
-   RIGHT SIDE — PERSONAL INFORMATION
-================================= */
+/* =========================================
+   RIGHT COLUMN
+========================================= */
 
 #about .about-right {
-    display: block;
+    width: 100%;
     min-width: 0;
-    min-height: 0;
-    height: 100%;
 }
 
-/* PERSONAL INFORMATION BOX */
 #about .about-info-box {
+    width: 100%;
     box-sizing: border-box;
 
-    width: 100%;
-    height: 100%;
-    min-height: 0;
+    padding: 22px 30px;
 
-    padding: 25px;
+    border: 1px solid rgba(192, 132, 252, 0.45);
+    border-radius: 14px;
+
+    background: rgba(17, 19, 38, 0.88);
+    backdrop-filter: blur(15px);
 
     display: flex;
     flex-direction: column;
     justify-content: center;
-
-    border: 1px solid rgba(192, 132, 252, 0.45);
-    border-radius: 15px;
-
-    background: rgba(17, 19, 38, 0.85);
-    backdrop-filter: blur(15px);
-
-    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.08);
 }
 
-/* PERSONAL INFORMATION HEADING */
 #about .about-info-box h3 {
     color: #b76aff;
-    font-size: 1.15rem;
+    font-size: 1.25rem;
     text-align: center;
-    margin-bottom: 22px;
+    margin: 0 0 20px;
 }
 
-/* INFORMATION TEXT */
 #about .about-info-box p {
+    display: grid;
+    grid-template-columns: 115px minmax(0, 1fr);
+    gap: 50px;
+
     color: var(--muted);
     font-size: 0.9rem;
-    line-height: 1.6;
-    margin: 8px 0;
+    line-height: 2;
+
+    margin: 0.9px 0;
     overflow-wrap: anywhere;
 }
 
-/* INFORMATION LABELS */
 #about .about-info-box strong {
     color: #b76aff;
-    margin-right: 6px;
+    font-weight: 600;
 }
 
-/* HOVER EFFECT */
+#about .about-info-box span {
+    min-width: 0;
+}
+
+/* =========================================
+   HOVER EFFECTS
+========================================= */
+
+#about .about-intro,
+#about .about-card,
+#about .about-info-box {
+    transition: 0.25s ease;
+}
+
+#about .about-intro:hover,
+#about .about-card:hover,
 #about .about-info-box:hover {
     border-color: #b76aff;
     box-shadow: 0 0 15px rgba(183, 106, 255, 0.15);
 }
-
 /* =================================
    RESPONSIVE DESIGN — MOBILE
 ================================= */

@@ -690,6 +690,34 @@ footer.page-controls {
     align-items: stretch;
 }
 
+
+/* =================================
+   ABOUT ME — COMPACT ONE-PAGE LAYOUT
+================================= */
+
+#about .content-wrap {
+    width: 100%;
+    max-width: 1350px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 0 15px;
+}
+
+/* MAIN LAYOUT */
+#about .about-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 2px minmax(0, 1.1fr);
+    gap: 18px;
+
+    width: 100%;
+    height: calc(100svh - 150px);
+    max-height: 650px;
+    min-height: 0;
+
+    margin-top: -15px;
+    align-items: stretch;
+}
+
 /* =================================
    LEFT SIDE — SKILLS AND HOBBIES
 ================================= */
@@ -697,23 +725,26 @@ footer.page-controls {
 #about .about-left {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 15px;
+    gap: 12px;
     min-width: 0;
+    min-height: 0;
 }
 
-/* SKILLS AND HOBBIES CARDS */
+/* CARDS */
 #about .about-card {
     box-sizing: border-box;
     min-width: 0;
-    padding: 25px 20px;
+    min-height: 0;
+
+    padding: 18px 14px;
 
     border: 1px solid rgba(192, 132, 252, 0.3);
-    border-radius: 18px;
+    border-radius: 15px;
 
     background: rgba(17, 19, 38, 0.72);
     backdrop-filter: blur(15px);
 
-    box-shadow: 0 12px 35px rgba(124, 58, 237, 0.08);
+    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.08);
 
     display: flex;
     flex-direction: column;
@@ -723,22 +754,22 @@ footer.page-controls {
 /* CARD HEADINGS */
 #about .about-card h3 {
     color: #b76aff;
-    font-size: 1.20rem;
+    font-size: 1.05rem;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
 }
 
 /* CARD LISTS */
 #about .about-card ul {
-    padding-left: 20px;
+    padding-left: 17px;
     margin: 0;
 }
 
 #about .about-card li {
     color: var(--muted);
-    font-size: 1rem;
-    line-height: 1.8;
-    margin-bottom: 8px;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    margin-bottom: 5px;
 }
 
 /* =================================
@@ -752,7 +783,7 @@ footer.page-controls {
     background: rgba(183, 106, 255, 0.65);
     border-radius: 10px;
 
-    box-shadow: 0 0 12px rgba(183, 106, 255, 0.3);
+    box-shadow: 0 0 10px rgba(183, 106, 255, 0.3);
 }
 
 /* =================================
@@ -760,10 +791,10 @@ footer.page-controls {
 ================================= */
 
 #about .about-right {
-    display: flex;
-    width: 100%;
+    display: block;
     min-width: 0;
     min-height: 0;
+    height: 100%;
 }
 
 /* PERSONAL INFORMATION BOX */
@@ -772,50 +803,89 @@ footer.page-controls {
 
     width: 100%;
     height: 100%;
+    min-height: 0;
 
-    padding: 35px;
+    padding: 25px;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-    border: 2px solid rgba(192, 132, 252, 0.55);
-    border-radius: 18px;
+    border: 1px solid rgba(192, 132, 252, 0.45);
+    border-radius: 15px;
 
     background: rgba(17, 19, 38, 0.85);
     backdrop-filter: blur(15px);
 
-    box-shadow: 0 12px 35px rgba(124, 58, 237, 0.12);
+    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.08);
 }
 
 /* PERSONAL INFORMATION HEADING */
 #about .about-info-box h3 {
     color: #b76aff;
-    font-size: 1.3rem;
+    font-size: 1.15rem;
     text-align: center;
-
-    margin-bottom: 30px;
+    margin-bottom: 22px;
 }
 
-/* PERSONAL INFORMATION TEXT */
+/* INFORMATION TEXT */
 #about .about-info-box p {
     color: var(--muted);
-    font-size: 1rem;
-    line-height: 1.8;
-
-    margin: 10px 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 8px 0;
+    overflow-wrap: anywhere;
 }
 
 /* INFORMATION LABELS */
 #about .about-info-box strong {
     color: #b76aff;
-    margin-right: 8px;
+    margin-right: 6px;
 }
 
 /* HOVER EFFECT */
 #about .about-info-box:hover {
     border-color: #b76aff;
-    box-shadow: 0 0 18px rgba(183, 106, 255, 0.2);
+    box-shadow: 0 0 15px rgba(183, 106, 255, 0.15);
+}
+
+/* =================================
+   RESPONSIVE DESIGN — MOBILE
+================================= */
+
+@media (max-width: 768px) {
+
+    #about .about-layout {
+        grid-template-columns: 1fr;
+        height: auto;
+        max-height: none;
+        margin-top: 0;
+        gap: 15px;
+    }
+
+    #about .about-left {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        min-height: 220px;
+    }
+
+    #about .about-card {
+        min-height: 220px;
+    }
+
+    #about .about-divider {
+        width: 100%;
+        height: 2px;
+    }
+
+    #about .about-right {
+        height: auto;
+        min-height: 260px;
+    }
+
+    #about .about-info-box {
+        min-height: 260px;
+    }
+
 }
 
 /* =================================
@@ -1216,53 +1286,3 @@ footer.page-controls,
 }
 
 
-/* FORCE PERSONAL INFORMATION BOX TO DISPLAY */
-
-#about .about-right {
-    display: block !important;
-    width: 100%;
-    height: 100%;
-    min-width: 0;
-    min-height: 0;
-}
-
-#about .about-info-box {
-    display: flex !important;
-    flex-direction: column;
-    justify-content: center;
-
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    min-height: 300px;
-
-    padding: 35px;
-
-    background: rgba(17, 19, 38, 0.95) !important;
-
-    border: 2px solid #b76aff !important;
-    border-radius: 18px !important;
-
-    backdrop-filter: blur(15px);
-
-    box-shadow: 0 12px 35px rgba(124, 58, 237, 0.2);
-}
-
-#about .about-info-box h3 {
-    color: #b76aff;
-    text-align: center;
-    font-size: 1.3rem;
-    margin-bottom: 30px;
-}
-
-#about .about-info-box p {
-    color: var(--muted);
-    font-size: 1rem;
-    line-height: 1.8;
-    margin: 10px 0;
-}
-
-#about .about-info-box strong {
-    color: #b76aff;
-    margin-right: 8px;
-}

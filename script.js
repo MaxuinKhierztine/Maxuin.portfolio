@@ -169,4 +169,56 @@ if (!prefersReducedMotion.matches) {
     animateBackground();
 }
 
+ 
+document.addEventListener("DOMContentLoaded", () => {
+
+    const certificatePhotos = document.querySelectorAll("#education .ach-proof");
+    const certificateViewer = document.getElementById("certificateViewer");
+    const fullCertificate = document.getElementById("fullCertificate");
+    const closeCertificate = document.getElementById("closeCertificate");
+
+    if (!certificateViewer || !fullCertificate || !closeCertificate) {
+        console.error("Certificate viewer HTML is missing.");
+        return;
+    }
+
+    // Open certificate
+    certificatePhotos.forEach(photo => {
+        photo.addEventListener("click", () => {
+            fullCertificate.src = photo.src;
+            certificateViewer.classList.add("active");
+        });
+    });
+
+    // Close button
+    closeCertificate.addEventListener("click", () => {
+        certificateViewer.classList.remove("active");
+        fullCertificate.src = "";
+    });
+
+    // Close by tapping the enlarged certificate
+    fullCertificate.addEventListener("click", (event) => {
+        event.stopPropagation();
+        certificateViewer.classList.remove("active");
+        fullCertificate.src = "";
+    });
+
+    // Close when clicking outside the image
+    certificateViewer.addEventListener("click", event => {
+        if (event.target === certificateViewer) {
+            certificateViewer.classList.remove("active");
+            fullCertificate.src = "";
+        }
+    });
+
+    // Close using Escape key
+    document.addEventListener("keydown", event => {
+        if (event.key === "Escape") {
+            certificateViewer.classList.remove("active");
+            fullCertificate.src = "";
+        }
+    });
+
+});
+
    

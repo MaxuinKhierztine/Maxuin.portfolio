@@ -667,142 +667,49 @@ footer.page-controls {
 
 
 /* =========================================
-   PAGE 2 — ABOUT ME
+   PAGE 2 — ABOUT ME (INFO ON TOP, CARDS BELOW)
 ========================================= */
+
+#about {
+    height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: hidden; /* Prevents page scrolling */
+}
 
 #about .content-wrap {
     width: 100%;
-    max-width: 1150px;
-    margin: 5 auto;
-    padding: 15px 15px;
-    box-sizing: border-box;
-}
-
-/* MAIN LAYOUT */
-#about .about-layout {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 2px minmax(0, 1fr);
-    gap: 22px;
-
-    width: 100%;
-    max-width: 1100px;
+    max-width: 750px;
     margin: 0 auto;
-
-    align-items: center;
-}
-
-/* =========================================
-   LEFT COLUMN
-========================================= */
-
-#about .about-left {
-    width: 100%;
-    min-width: 0;
-
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-}
-
-/* ABOUT ME BOX */
-#about .about-intro {
-    width: 100%;
+    padding: 10px 15px;
     box-sizing: border-box;
-
-    padding: 18px 20px;
-
-    border: 1px solid rgba(192, 132, 252, 0.4);
-    border-radius: 14px;
-
-    background: rgba(17, 19, 38, 0.85);
-    backdrop-filter: blur(15px);
-}
-
-#about .about-intro h2 {
-    color: #b76aff;
-    font-size: 1rem;
-    text-align: center;
-    margin: 0 0 10px;
-}
-
-#about .about-intro p {
-    color: var(--muted);
-    font-size: 0.9rem;
-    line-height: 1.6;
-    text-align: center;
-    margin: 0;
-}
-
-/* =========================================
-   SKILLS AND HOBBIES
-========================================= */
-
-#about .about-cards {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 50px;
-
-    width: 100%;
-}
-
-#about .about-card {
-    width: 100%;
-    min-width: 0;
-    min-height: 180px;
-    box-sizing: border-box;
-
-    padding: 18px 13px;
-
-    border: 1px solid rgba(192, 132, 252, 0.35);
-    border-radius: 14px;
-
-    background: rgba(17, 19, 38, 0.85);
-    backdrop-filter: blur(15px);
-
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-#about .about-card h3 {
-    color: #b76aff;
-    font-size: 1rem;
-    text-align: center;
-    margin: 0 0 12px;
+/* MAIN LAYOUT */
+#about .about-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Tight spacing between top box and bottom cards */
+    width: 100%;
+    margin: 0 auto;
 }
 
-#about .about-card ul {
-    margin: 0;
-    padding-left: 17px;
-}
-
-#about .about-card li {
-    color: var(--muted);
-    font-size: 0.9rem;
-    line-height: 1.5;
-    margin-bottom: 7px;
-}
-
-/* =========================================
-   MIDDLE DIVIDER
-========================================= */
-
+/* Hides the old vertical divider */
 #about .about-divider {
-    width: 5px;
-    height: 100%;
-    min-height: 400px;
-
-    background: rgba(183, 106, 255, 0.7);
-    border-radius: 10px;
-
-    box-shadow: 0 0 10px rgba(183, 106, 255, 0.3);
+    display: none;
 }
 
 /* =========================================
-   RIGHT COLUMN
+   TOP: PERSONAL INFO BOX (.about-right moved to top)
 ========================================= */
 
 #about .about-right {
+    order: 1; /* Forces Personal Info to appear FIRST (on top) */
     width: 100%;
     min-width: 0;
 }
@@ -810,37 +717,28 @@ footer.page-controls {
 #about .about-info-box {
     width: 100%;
     box-sizing: border-box;
-
-    padding: 22px 30px;
-
-    border: 1px solid rgba(192, 132, 252, 0.45);
-    border-radius: 14px;
-
+    padding: 14px 16px;
+    border: 1px solid rgba(156, 116, 197, 0.45);
+    border-radius: 12px;
     background: rgba(17, 19, 38, 0.88);
     backdrop-filter: blur(15px);
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 #about .about-info-box h3 {
     color: #b76aff;
     font-size: 1.25rem;
     text-align: center;
-    margin: 0 0 20px;
+    margin: 0 0 10px;
 }
 
 #about .about-info-box p {
     display: grid;
-    grid-template-columns: 115px minmax(0, 1fr);
-    gap: 50px;
-
+    grid-template-columns: 110px minmax(0, 1fr);
+    gap: 20px;
     color: var(--muted);
-    font-size: 0.9rem;
-    line-height: 2;
-
-    margin: 0.9px 0;
+    font-size: 1rem;
+    line-height: 1.45;
+    margin: 2px 0;
     overflow-wrap: anywhere;
 }
 
@@ -851,6 +749,86 @@ footer.page-controls {
 
 #about .about-info-box span {
     min-width: 0;
+}
+
+/* =========================================
+   BOTTOM: SKILLS & HOBBIES (.about-left moved below)
+========================================= */
+
+#about .about-left {
+    order: 2; /* Forces Intro, Skills & Hobbies to appear SECOND (below) */
+    width: 100%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* ABOUT ME INTRO (If you still have this in your HTML) */
+#about .about-intro {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 16px;
+    border: 1px solid rgba(192, 132, 252, 0.4);
+    border-radius: 12px;
+    background: rgba(17, 19, 38, 0.85);
+    backdrop-filter: blur(15px);
+}
+
+#about .about-intro h2 {
+    color: #b76aff;
+    font-size: 0.9rem;
+    text-align: center;
+    margin: 0 0 4px;
+}
+
+#about .about-intro p {
+    color: var(--muted);
+    font-size: 0.8rem;
+    line-height: 1.35;
+    text-align: center;
+    margin: 0;
+}
+
+/* SKILLS AND HOBBIES SIDE-BY-SIDE */
+#about .about-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    width: 100%;
+}
+
+#about .about-card {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    border: 1px solid rgba(192, 132, 252, 0.35);
+    border-radius: 12px;
+    background: rgba(17, 19, 38, 0.85);
+    backdrop-filter: blur(15px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#about .about-card h3 {
+    color: #b76aff;
+    font-size: 1rem;
+    text-align: center;
+    margin: 0 0 6px;
+}
+
+#about .about-card ul {
+    margin: 0;
+    padding-left: 16px;
+}
+
+#about .about-card li {
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.35;
+    margin-bottom: 3px;
 }
 
 /* =========================================
@@ -868,6 +846,17 @@ footer.page-controls {
 #about .about-info-box:hover {
     border-color: #b76aff;
     box-shadow: 0 0 15px rgba(183, 106, 255, 0.15);
+}
+#about .about-divider {
+    display: block;          /* Makes the divider visible again */
+    width: 100%;             /* Stretches it across the full width of the column */
+    height: 2px;             /* Thickness of the line */
+    background: rgba(183, 106, 255, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(183, 106, 255, 0.3);
+    
+    order: 1.5;              /* Places it right between the Personal Info box (order 1) and Skills/Hobbies (order 2) */
+    margin: 2px 0;           /* Space around the divider */
 }
 /* =================================
    RESPONSIVE DESIGN — MOBILE

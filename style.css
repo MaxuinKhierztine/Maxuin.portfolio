@@ -24,7 +24,6 @@ html {
 body {
   min-height: 100vh;
   overflow: hidden;
-  overflow-y: auto;
   background:
     radial-gradient(circle at 15% 20%, rgba(124, 58, 237, 0.16), transparent 35%),
     radial-gradient(circle at 85% 75%, rgba(168, 85, 247, 0.12), transparent 35%),
@@ -110,8 +109,10 @@ a {
 #presentation {
   position: relative;
   width: 100%;
-  height: calc(100dvh - 150px);
-  min-height: 480px;
+  height: calc(100dvh - 141px);
+  min-height: 0;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .screen {

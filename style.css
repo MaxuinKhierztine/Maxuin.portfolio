@@ -463,10 +463,6 @@ footer.page-controls {
   background: var(--purple);
 }
 
-
-
-
-
 /* RESPONSIVE DESIGN */
 
 @media (max-width: 900px) {
@@ -667,7 +663,7 @@ footer.page-controls {
 
 
 /* =========================================
-   PAGE 2 — ABOUT ME (INFO ON TOP, CARDS BELOW)
+PERSONAL INFO
 ========================================= */
 
 #about {
@@ -1161,97 +1157,269 @@ body::after {
   }
 }
 
-/* ================================
-   EDUCATION PAGE
-================================ */
+/* =========================================
+   PAGE 3 — EDUCATION & ACHIEVEMENTS
+   SINGLE SCREEN LAYOUT
+========================================= */
 
 #education {
+    width: 100%;
+    height: 100vh;
+    min-height: 0;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 2px 25px 160px;
     overflow: hidden;
 }
 
+/* MAIN CONTENT */
 #education .content-wrap {
     width: 100%;
-    max-width: 1500px;
+    max-width: 1300px;
+    height: 100%;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 25px;
     box-sizing: border-box;
 }
 
-#education .education-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 35px;
+/* EDUCATION STACK */
+#education .edu-stack {
     width: 100%;
-    margin: 30px auto 0;
-}
+    height: 100%;
 
-/* Individual education entry */
-#education .education-card {
-    min-width: 0px;
-    padding: 25px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    background: transparent;
-    border: none;
-    box-shadow: none;
+    justify-content: center;
+    align-items: stretch;
+
+    gap: 20px;
 }
 
-/* Circular image frame */
-#education .education-card img {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    border: 3px solid #a855f7;
-    padding: 4px;
-    object-fit: contain;
-    background: white;
-    margin-bottom: 30px;
-}
-
-/* Text information */
-#education .education-info {
+/* SCHOOL CARDS */
+#education .edu-card {
     width: 100%;
+    flex-shrink: 0;
+    box-sizing: border-box;
+
+    padding: 11px 20px;
+
+    border: 1px solid rgba(192, 132, 252, 0.45);
+    border-radius: 14px;
+
+    background: rgba(17, 19, 38, 0.88);
+    backdrop-filter: blur(15px);
+
+    box-shadow: 0 0 18px rgba(183, 106, 255, 0.12);
+
+    transition: 0.25s ease;
+}
+
+#education .edu-card:hover {
+    border-color: #b76aff;
+    box-shadow: 0 0 22px rgba(183, 106, 255, 0.22);
+}
+
+/* SCHOOL HEADER */
+#education .edu-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) 2px minmax(0, 1.1fr);
+    align-items: center;
+    gap: 14px;
+}
+
+#education .edu-school-left {
+    display: flex;
+    align-items: center;
+    gap: 11px;
     min-width: 0;
 }
 
-/* Education level */
-#education .education-info h3 {
+#education .edu-school-left img.edu-logo {
+    display: block;
+    width: 42px !important;
+    height: 42px !important;
+    max-width: 42px !important;
+    max-height: 42px !important;
+    min-width: 42px;
+    object-fit: contain;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+#education .edu-school-left h3 {
+    color: #b76aff;
+    font-size: 1.2rem;
+    margin: 0 0 3px;
+    letter-spacing: 0.5px;
+}
+
+#education .edu-school-name {
+    color: #ffffff;
+    font-size: 0.99rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+#education .edu-divider-v {
+    width: 2px;
+    height: 40px;
+    background: rgba(183, 106, 255, 0.4);
+}
+
+#education .edu-school-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+}
+
+#education .edu-years {
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 0 0 3px;
+}
+
+#education .edu-program,
+#education .edu-track,
+#education .edu-status {
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.25;
+    margin: 0;
+}
+
+/* ACHIEVEMENTS */
+#education .edu-achievements-split {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 2px minmax(0, 1fr);
+    gap: 20px;
+
+    margin-top: 7px;
+    padding-top: 7px;
+
+    border-top: 1px solid rgba(192, 132, 252, 0.2);
+}
+
+#education .ach-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 0;
+}
+
+#education .ach-column h4 {
+    color: #b76aff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    margin: 0 0 3px;
+}
+
+#education .ach-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+    min-width: 0;
+    min-height: 48px;
+}
+
+#education .ach-row span {
+    flex: 1;
+    min-width: 0;
+
+    color: #e2e8f0;
+    font-size: 1rem;
+    line-height: 1.25;
+}
+
+#education .ach-row img.ach-proof {
+    width: 78px !important;
+    height: 50px !important;
+    max-width: 78px !important;
+    max-height: 50px !important;
+    min-width: 78px;
+
+    object-fit: cover;
+    border-radius: 8px;
+
+    cursor: zoom-in;
+    pointer-events: auto;
+    user-select: auto;
+    flex-shrink: 0;
+}
+
+/* VERTICAL DIVIDER */
+#education .ach-divider-vertical {
+    width: 1px;
+    background: rgba(183, 106, 255, 0.4);
+    align-self: stretch;
+}
+
+/* CONNECTORS */
+#education .edu-connector {
+    width: 0.0px;
+    height: 2px;
+    flex-shrink: 0;
+
+    background: rgba(183, 106, 255, 0.75);
+    border-radius: 10px;
+
+    box-shadow: 0 0 8px rgba(183, 106, 255, 0.4);
+
+    margin: 0 auto;
+}
+/* CERTIFICATE FULLSCREEN VIEWER */
+.certificate-viewer {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+
+    background: rgba(8, 7, 18, 0.96);
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 50px 20px;
+    box-sizing: border-box;
+}
+
+.certificate-viewer.active {
+    display: flex;
+}
+
+.certificate-viewer img {
+    max-width: 95%;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.certificate-close {
+    position: absolute;
+    top: 18px;
+    right: 28px;
+
+    background: transparent;
+    border: none;
     color: white;
-    font-size: 1.50rem;
-    text-align: center;
-    margin-bottom: 25px;
-}
 
-/* School name and year */
-#education .education-info p {
-    font-size: 1.0rem;
-    line-height: 2;
-    text-align: left;
-    margin-bottom: 7px;
-    overflow-wrap: anywhere;
+    font-size: 40px;
+    cursor: pointer;
 }
-
-#education .school-name {
-    color: #c084fc;
-    font-weight: 700;
-}
-
-#education .school-year {
-    color: white;
-    font-weight: 700;
-    margin-top: 8px;
-}
-
-#education .present-label {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 6px 10px;
-    border-radius: 20px;
-    background: rgba(147, 51, 234, 0.2);
-    color: #d8b4fe;
-    font-size: 1.25rem;
-    font-weight: 700;
+#fullCertificate {
+    cursor: zoom-out;
+    pointer-events: auto;
 }
 
 /* Responsive layout */

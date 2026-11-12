@@ -1180,7 +1180,7 @@ body::after {
 /* MAIN CONTENT */
 #education .content-wrap {
     width: 100%;
-    max-width: 1300px;
+    max-width: 1600px;
     height: 100%;
     margin: 0 auto;
     padding: 0 25px;
@@ -1197,7 +1197,7 @@ body::after {
     justify-content: center;
     align-items: stretch;
 
-    gap: 20px;
+    gap: 2px;
 }
 
 /* SCHOOL CARDS */

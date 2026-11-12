@@ -105,7 +105,6 @@ a {
 }
 
 /* MAIN PRESENTATION */
-
 #presentation {
   position: relative;
   width: 100%;
@@ -1173,7 +1172,7 @@ body::after {
     align-items: center;
     justify-content: center;
 
-    padding: 2px 25px 160px;
+    padding: 45px 25px 160px;
     overflow: hidden;
 }
 

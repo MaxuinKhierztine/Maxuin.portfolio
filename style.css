@@ -1157,6 +1157,7 @@ body::after {
   }
 }
 
+
 /* =========================================
    PAGE 3 — EDUCATION & ACHIEVEMENTS
    SINGLE SCREEN LAYOUT
@@ -1376,6 +1377,46 @@ body::after {
 
     margin: 0 auto;
 }
+
+
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 768px) {
+  #education {
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+    padding: 85px 12px 20px;
+  }
+
+  #education .education-wrap {
+    height: auto;
+  }
+
+  #education .education-grid {
+    height: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    align-content: start;
+    gap: 12px;
+  }
+
+  #education .school-card {
+    height: fit-content;
+    min-height: 0;
+  }
+
+  .certificate-modal {
+    padding: 15px;
+  }
+
+  .certificate-modal img {
+    max-width: 100%;
+    max-height: 82vh;
+  }
+}
+
 /* CERTIFICATE FULLSCREEN VIEWER */
 .certificate-viewer {
     display: none;
@@ -1421,7 +1462,6 @@ body::after {
     cursor: zoom-out;
     pointer-events: auto;
 }
-
 /* Responsive layout */
 @media (max-width: 1000px) {
     #education .education-grid {

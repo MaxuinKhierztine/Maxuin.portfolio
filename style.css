@@ -1461,19 +1461,3 @@ footer.page-controls,
         grid-template-columns: 1fr;
     }
 }
-
-html {
-    overflow: hidden !important;
-    height: 100%;
-}
-
-body {
-    overflow: hidden !important;
-    height: 100%;
-    margin: 0;
-}
-
-* {
-    box-sizing: border-box;
-}
-

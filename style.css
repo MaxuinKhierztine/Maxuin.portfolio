@@ -1444,3 +1444,88 @@ footer.page-controls,
         grid-template-columns: 1fr;
     }
 }
+
+/* FAMILY PAGE — EXTRA LARGE PHOTOS */
+#family .family-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 25px auto 0;
+}
+
+#family .family-card {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  min-height: 245px;
+  padding: 20px;
+  min-width: 0;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+#family .family-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(177, 75, 255, 0.8);
+  box-shadow: 0 12px 35px rgba(120, 30, 220, 0.25);
+}
+
+/* ACTUAL PHOTO SIZE */
+#family .family-card img {
+  display: block;
+  width: 200px;
+  height: 200px;
+  min-width: 200px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 16px;
+  flex-shrink: 0;
+  box-shadow: 0 5px 20px rgba(100, 20, 180, 0.2);
+}
+
+#family .family-info {
+  min-width: 0;
+}
+
+#family .family-info h3 {
+  color: #bd65ff;
+  font-size: 1.5rem;
+  margin: 0 0 12px;
+}
+
+#family .family-info p {
+  color: rgba(235, 225, 250, 0.82);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 650px) {
+  #family .family-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  #family .family-card {
+    min-height: 130px;
+    padding: 12px;
+    gap: 14px;
+  }
+
+  #family .family-card img {
+    width: 105px;
+    height: 105px;
+    min-width: 105px;
+  }
+
+  #family .family-info h3 {
+    font-size: 1.05rem;
+  }
+
+  #family .family-info p {
+    font-size: 0.8rem;
+  }
+}

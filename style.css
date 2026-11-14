@@ -44,7 +44,6 @@ a {
 }
 
 /* NAVIGATION */
-
 .navbar {
   position: relative;
   z-index: 20;
@@ -149,9 +148,7 @@ body {
     transform: translateY(0);
   }
 }
-
 /* HOME PAGE */
-
 .home-screen {
   display: none;
   justify-content: space-between;
@@ -274,7 +271,6 @@ body {
 }
 
 /* CONTACT ME GRID TABLE */
-
 .contact-table {
   width: 100%;
   max-width: 680px;
@@ -329,7 +325,6 @@ body {
 }
 
 /* OTHER CONTENT PAGES */
-
 .content-screen {
   align-items: flex-start;
   justify-content: center;
@@ -393,7 +388,6 @@ body {
 }
 
 /* FOOTER PAGE CONTROLS */
-
 footer.page-controls {
   position: fixed;
   z-index: 30;
@@ -464,7 +458,6 @@ footer.page-controls {
 }
 
 /* RESPONSIVE DESIGN */
-
 @media (max-width: 900px) {
   .navbar {
     padding: 0 4%;
@@ -661,18 +654,14 @@ footer.page-controls {
   }
 }
 
-
-/* =========================================
-PERSONAL INFO
-========================================= */
-
+/* PERSONAL INFO*/
 #about {
     height: 100vh;
     box-sizing: border-box;
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    overflow: hidden; /* Prevents page scrolling */
+    overflow: hidden; 
 }
 
 #about .content-wrap {
@@ -690,20 +679,16 @@ PERSONAL INFO
 #about .about-layout {
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Tight spacing between top box and bottom cards */
+    gap: 10px; 
     width: 100%;
     margin: 0 auto;
 }
 
-/* Hides the old vertical divider */
 #about .about-divider {
     display: none;
 }
 
-/* =========================================
-   TOP: PERSONAL INFO BOX 
-========================================= */
-
+/*  PERSONAL INFO BOX */
 #about .about-right {
     order: 1; 
     width: 100%;
@@ -747,10 +732,6 @@ PERSONAL INFO
     min-width: 0;
 }
 
-/* =========================================
-   BOTTOM: SKILLS & HOBBIES 
-========================================= */
-
 #about .about-left {
     order: 2; 
     width: 100%;
@@ -759,7 +740,6 @@ PERSONAL INFO
     flex-direction: column;
     gap: 12px;
 }
-
 
 #about .about-intro {
     width: 100%;
@@ -786,7 +766,6 @@ PERSONAL INFO
     margin: 0;
 }
 
-/* SKILLS AND HOBBIES SIDE-BY-SIDE */
 #about .about-cards {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -827,10 +806,7 @@ PERSONAL INFO
     margin-bottom: 3px;
 }
 
-/* =========================================
-   HOVER EFFECTS
-========================================= */
-
+/*  HOVER EFFECTS */
 #about .about-intro,
 #about .about-card,
 #about .about-info-box {
@@ -854,10 +830,7 @@ PERSONAL INFO
     order: 1.5;             
     margin: 2px 0;          
 }
-/* =================================
-   RESPONSIVE DESIGN — MOBILE
-================================= */
-
+/* RESPONSIVE DESIGN — MOBILE */
 @media (max-width: 768px) {
 
     #about .about-layout {
@@ -892,10 +865,6 @@ PERSONAL INFO
     }
 
 }
-
-/* =================================
-   RESPONSIVE DESIGN
-================================= */
 
 @media (max-width: 768px) {
 
@@ -948,7 +917,6 @@ PERSONAL INFO
 
 }
 
-/* Smaller screens */
 @media (max-width: 900px) {
     #about .about-layout {
         height: auto;
@@ -969,7 +937,6 @@ PERSONAL INFO
 }
 
 /* RESPONSIVE - MOBILE */
-
 @media (max-width: 500px) {
     #about .about-intro {
         padding: 22px;
@@ -988,10 +955,7 @@ PERSONAL INFO
     }
 }
 
-/* ==========================================
-   ANIMATED PURPLE CIRCUIT BACKGROUND
-========================================== */
-
+/*  ANIMATED PURPLE CIRCUIT BACKGROUND */
 body {
     position: relative;
     isolation: isolate;
@@ -1001,7 +965,6 @@ body {
 }
 
 /* Background image layer */
-
 body::before {
     content: "";
     position: fixed;
@@ -1033,7 +996,6 @@ body::before {
 }
 
 /* Purple ambient glow */
-
 body::after {
     content: "";
     position: fixed;
@@ -1057,8 +1019,6 @@ body::after {
     animation: purpleGlow 12s ease-in-out infinite alternate;
 }
 
-
-
 @keyframes circuitFloat {
     0% {
         background-position: 48% 48%;
@@ -1070,7 +1030,6 @@ body::after {
 }
 
 /* Ambient glow animation */
-
 @keyframes purpleGlow {
     0% {
         opacity: 0.55;
@@ -1082,7 +1041,6 @@ body::after {
 }
 
 /*background */
-
 .navbar,
 #presentation,
 footer.page-controls {
@@ -1157,12 +1115,7 @@ body::after {
   }
 }
 
-
-/* =========================================
-   PAGE 3 — EDUCATION & ACHIEVEMENTS
-   SINGLE SCREEN LAYOUT
-========================================= */
-
+/* PAGE 3 — EDUCATION & ACHIEVEMENTS*/
 #education {
     width: 100%;
     height: 100vh;
@@ -1177,7 +1130,6 @@ body::after {
     overflow: hidden;
 }
 
-/* MAIN CONTENT */
 #education .content-wrap {
     width: 100%;
     max-width: 1300px;
@@ -1187,7 +1139,6 @@ body::after {
     box-sizing: border-box;
 }
 
-/* EDUCATION STACK */
 #education .edu-stack {
     width: 100%;
     height: 100%;
@@ -1200,7 +1151,6 @@ body::after {
     gap: 10px;
 }
 
-/* SCHOOL CARDS */
 #education .edu-card {
     width: 100%;
     flex-shrink: 0;
@@ -1224,7 +1174,6 @@ body::after {
     box-shadow: 0 0 22px rgba(183, 106, 255, 0.22);
 }
 
-/* SCHOOL HEADER */
 #education .edu-header {
     display: grid;
     grid-template-columns: minmax(0, 1.1fr) 2px minmax(0, 1.1fr);
@@ -1293,7 +1242,6 @@ body::after {
     line-height: 1.25;
     margin: 0;
 }
-
 /* ACHIEVEMENTS */
 #education .edu-achievements-split {
     display: grid;
@@ -1357,14 +1305,12 @@ body::after {
     flex-shrink: 0;
 }
 
-/* VERTICAL DIVIDER */
 #education .ach-divider-vertical {
     width: 1px;
     background: rgba(183, 106, 255, 0.4);
     align-self: stretch;
 }
 
-/* CONNECTORS */
 #education .edu-connector {
     width: 0.0px;
     height: 2px;
@@ -1378,11 +1324,7 @@ body::after {
     margin: 0 auto;
 }
 
-
-
-
 /* MOBILE RESPONSIVE */
-
 @media (max-width: 768px) {
   #education {
     height: auto;

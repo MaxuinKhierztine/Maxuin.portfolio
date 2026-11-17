@@ -1683,3 +1683,7 @@ footer.page-controls,
 
 }
 
+.screen {
+  padding-bottom: 85px;
+  box-sizing: border-box;
+}

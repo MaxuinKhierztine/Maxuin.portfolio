@@ -234,28 +234,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-// FRIENDS AUTOMATIC SLIDESHOW
-
-const friendsSlideshow = document.querySelector(
-    "#family .friends-slideshow"
-);
-
-if (friendsSlideshow) {
-    const slides = friendsSlideshow.querySelectorAll(".friends-slide");
-
-    if (slides.length > 0) {
-        let currentIndex = 0;
-
-        slides.forEach((slide, index) => {
-            slide.classList.toggle("active", index === 0);
-        });
-
-        setInterval(() => {
-            slides[currentIndex].classList.remove("active");
-
-            currentIndex = (currentIndex + 1) % slides.length;
-
-            slides[currentIndex].classList.add("active");
-        }, 3000);
-    }
-}

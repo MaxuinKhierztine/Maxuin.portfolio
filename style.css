@@ -1532,8 +1532,8 @@ footer.page-controls,
     font-size: 0.8rem;
   }
 }
-
 /* FRIENDS ONLY - SLIDESHOW */
+
 #family .friends-slideshow {
   position: relative;
   width: 200px;
@@ -1566,3 +1566,4 @@ footer.page-controls,
     min-width: 105px;
   }
 }
+

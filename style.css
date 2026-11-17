@@ -391,7 +391,7 @@ body {
 /* FOOTER PAGE CONTROLS */
 footer.page-controls {
   position: fixed;
-  z-index: 30;
+  z-index: 100;
   bottom: 0;
   left: 0;
   width: 100%;

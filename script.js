@@ -8,76 +8,89 @@ const currentPage = document.getElementById("current-page");
 let activeIndex = 0;
 
 function showScreen(index) {
-  activeIndex = Math.max(0, Math.min(index, screens.length - 1));
+    activeIndex = Math.max(0, Math.min(index, screens.length - 1));
 
-  screens.forEach((screen, i) => {
-    const isActive = i === activeIndex;
+    screens.forEach((screen, i) => {
+        const isActive = i === activeIndex;
 
-    screen.classList.toggle("active", isActive);
-    screen.setAttribute("aria-hidden", String(!isActive));
-    screen.inert = !isActive;
-  });
+        screen.classList.toggle("active", isActive);
+        screen.setAttribute("aria-hidden", String(!isActive));
+        screen.inert = !isActive;
+    });
 
-  currentPage.textContent = String(activeIndex + 1);
-  backButton.disabled = activeIndex === 0;
-  nextButton.disabled = activeIndex === screens.length - 1;
-
-  navigationButtons.forEach((button) => {
-    const isCurrent = Number(button.dataset.go) === activeIndex;
-
-    button.classList.toggle("active", isCurrent);
-
-    if (isCurrent) {
-      button.setAttribute("aria-current", "page");
-    } else {
-      button.removeAttribute("aria-current");
+    if (currentPage) {
+        currentPage.textContent = String(activeIndex + 1);
     }
-  });
 
-  const activeScreen = screens[activeIndex];
+    if (backButton) {
+        backButton.disabled = activeIndex === 0;
+    }
 
-  if (activeScreen) {
-    history.replaceState(null, "", `#${activeScreen.id}`);
-  }
+    if (nextButton) {
+        nextButton.disabled = activeIndex === screens.length - 1;
+    }
+
+    navigationButtons.forEach(button => {
+        const isCurrent = Number(button.dataset.go) === activeIndex;
+
+        button.classList.toggle("active", isCurrent);
+
+        if (isCurrent) {
+            button.setAttribute("aria-current", "page");
+        } else {
+            button.removeAttribute("aria-current");
+        }
+    });
+
+    const activeScreen = screens[activeIndex];
+
+    if (activeScreen) {
+        history.replaceState(null, "", `#${activeScreen.id}`);
+    }
 }
 
 // Navigation menu
-navigationButtons.forEach((button) => {
-  button.addEventListener("click", (event) => {
-    event.preventDefault();
-    showScreen(Number(button.dataset.go));
-  });
+navigationButtons.forEach(button => {
+    button.addEventListener("click", event => {
+        event.preventDefault();
+        showScreen(Number(button.dataset.go));
+    });
 });
 
 // Back and Next
-backButton.addEventListener("click", () => {
-  showScreen(activeIndex - 1);
-});
+if (backButton) {
+    backButton.addEventListener("click", () => {
+        showScreen(activeIndex - 1);
+    });
+}
 
-nextButton.addEventListener("click", () => {
-  showScreen(activeIndex + 1);
-});
+if (nextButton) {
+    nextButton.addEventListener("click", () => {
+        showScreen(activeIndex + 1);
+    });
+}
 
 // Keyboard controls
-document.addEventListener("keydown", (event) => {
-  const tag = event.target.tagName;
+document.addEventListener("keydown", event => {
+    const tag = event.target.tagName;
 
-  if (["INPUT", "TEXTAREA", "SELECT"].includes(tag)) return;
-  if (event.altKey || event.ctrlKey || event.metaKey) return;
+    if (["INPUT", "TEXTAREA", "SELECT"].includes(tag)) return;
+    if (event.altKey || event.ctrlKey || event.metaKey) return;
 
-  if (event.key === "ArrowRight") {
-    showScreen(activeIndex + 1);
-  } else if (event.key === "ArrowLeft") {
-    showScreen(activeIndex - 1);
-  } else if (event.key === "Home") {
-    showScreen(0);
-  }
+    if (event.key === "ArrowRight") {
+        showScreen(activeIndex + 1);
+    } else if (event.key === "ArrowLeft") {
+        showScreen(activeIndex - 1);
+    } else if (event.key === "Home") {
+        showScreen(0);
+    }
 });
 
-// Start at the screen specified in the URL, if available
+// Start at the screen specified in the URL
 const initialHash = window.location.hash;
+
 const initialIndex = screens.findIndex(
-  (screen) => `#${screen.id}` === initialHash
+    screen => `#${screen.id}` === initialHash
 );
 
 showScreen(initialIndex >= 0 ? initialIndex : 0);
@@ -88,8 +101,8 @@ const typingText = document.getElementById("typing-text");
 
 if (typingText) {
   const phrases = [
-    "Learning Today.",
-    "Building Tomorrow."
+    "Learning the logic.",
+    "Exploring the unknown."
   ];
 
   let phraseIndex = 0;
@@ -222,6 +235,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // FRIENDS AUTOMATIC SLIDESHOW
+
 const friendsSlideshow = document.querySelector(
     "#family .friends-slideshow"
 );
@@ -245,4 +259,3 @@ if (friendsSlideshow) {
         }, 3000);
     }
 }
-   

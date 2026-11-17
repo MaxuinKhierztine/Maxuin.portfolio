@@ -1532,3 +1532,37 @@ footer.page-controls,
     font-size: 0.8rem;
   }
 }
+
+/* FRIENDS ONLY - SLIDESHOW */
+#family .friends-slideshow {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  min-width: 200px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+#family .friends-slideshow img.friends-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+#family .friends-slideshow img.friends-slide.active {
+  opacity: 1;
+}
+
+@media (max-width: 650px) {
+  #family .friends-slideshow {
+    width: 105px;
+    height: 105px;
+    min-width: 105px;
+  }
+}
